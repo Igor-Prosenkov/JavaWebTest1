@@ -17,6 +17,8 @@ public class LoginPage extends BasePage {
     //локатор ошибки при входе
     private SelenideElement errorMessage = $("[data-test-id='login-error']");
 
+    //локатор для кнопки восстановить профиль
+    private SelenideElement  RecoveryPopup = $("[data-test-id='lockout-recover-btn']");
     {
         verifyPageElements();
     }
@@ -71,5 +73,10 @@ public class LoginPage extends BasePage {
    @Step("Переход на страницу восстановления пароля")
     public void openForgotPasswordPage() {
        forgotPasswordLink.shouldBe(visible).click();
+   }
+
+   @Step ("Переход на страницу восстановления пароля после 3-х неудачных попыток")
+    public void recoveryPopup() {
+       RecoveryPopup.shouldBe(visible).click();
    }
 }
