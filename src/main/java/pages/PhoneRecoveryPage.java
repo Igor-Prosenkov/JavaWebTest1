@@ -1,14 +1,15 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import core.base.BasePage;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
-public class PhoneRecoveryPage extends LoginPage{
+public class PhoneRecoveryPage extends BasePage {
     private SelenideElement phoneNumber = $("[data-test-id='phone-input']");
-    private SelenideElement selectCounty = $("[data-test-id='phone-input']");
+    private SelenideElement selectCounty = $("[name='country-select-btn']");
     private SelenideElement submitPhoneForm = $("[name='phone-submit-btn']");
 
     {
