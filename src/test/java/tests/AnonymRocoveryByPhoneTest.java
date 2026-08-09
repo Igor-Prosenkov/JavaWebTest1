@@ -8,6 +8,7 @@ import pages.LoginPage;
 import pages.PhoneRecoveryPage;
 
 import static com.codeborne.selenide.Selenide.open;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AnonymRocoveryByPhoneTest extends BaseTest {
     private static LoginPage loginPage;
@@ -35,6 +36,12 @@ public class AnonymRocoveryByPhoneTest extends BaseTest {
 
         phoneRecoveryPage = new PhoneRecoveryPage();
         phoneRecoveryPage.verifyPhoneRecoveryPage();
+        String countryCode = phoneRecoveryPage.selectCountryByName("australia");
+        phoneRecoveryPage.clickGetCodeWithoutPhoneNumber();
+        assertEquals("+61", countryCode,"Код страны не совпадает");
+        phoneRecoveryPage.clickGetCodeWithoutPhoneNumber();
+
+
 
 }
 }
