@@ -13,6 +13,8 @@ public class LoginPage extends BasePage {
     private SelenideElement loginButton = $("[name='login-submit-btn']");
     private SelenideElement forgotPasswordLink = $("[name='forgot-password-link']");
     private SelenideElement registrationButton = $("[name='hero-register-btn']");
+    private SelenideElement qrButton = $("[data-test-id='tab-qr']");
+    private SelenideElement qrPuctureButton = $("[fill='currentColor']");
 
     //локатор ошибки при входе
     private SelenideElement errorMessage = $("[data-test-id='login-error']");
@@ -30,6 +32,7 @@ public class LoginPage extends BasePage {
         loginButton.shouldBe(visible);
         forgotPasswordLink.shouldBe(visible);
         registrationButton.shouldBe(visible);
+        qrButton.shouldBe(visible);
     }
 
     @Step ("Проверяем сообщения об ошибке входа")
@@ -78,5 +81,11 @@ public class LoginPage extends BasePage {
    @Step ("Переход на страницу восстановления пароля после 3-х неудачных попыток")
     public void recoveryPopup() {
        RecoveryPopup.shouldBe(visible).click();
+   }
+
+   @Step ("переключение на qr-код  и проверка его отображения")
+    public void openQrCodeAndAssertVisible(){
+       qrButton.shouldBe(visible).click();
+       qrPuctureButton.shouldBe(visible);
    }
 }
