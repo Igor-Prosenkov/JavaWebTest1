@@ -1,7 +1,6 @@
 package tests;
 
 
-
 import core.base.BaseTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -24,11 +23,11 @@ public class LoginTestWithOnlyLogin extends BaseTest {
     }
 
     @Test
-    public void loginTestWithOnlyLogin(){
+    public void loginTestWithOnlyLogin() {
         loginPage.onlyPassword("vdsv");
 
         //Проверяем наличие ошибки
-        assertTrue(loginPage.isErrorMessageVisible(),"Сообщение об ошибке входа не отображаются");
+        assertTrue(loginPage.isErrorMessageVisible(), "Сообщение об ошибке входа не отображаются");
 
         //Проверка текста сообщения об ошибке
         String expectedErrowMassage = "Введите телефон, email или логин и пароль.";
