@@ -1,11 +1,11 @@
-package tests;
+package tests.veb;
 
 import core.base.BaseTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import pages.AnonimRecoveryPage;
-import pages.LoginPage;
-import pages.PhoneRecoveryPage;
+import pages.veb.AnonimRecoveryPage;
+import pages.veb.LoginPage;
+import pages.veb.PhoneRecoveryPage;
 
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;

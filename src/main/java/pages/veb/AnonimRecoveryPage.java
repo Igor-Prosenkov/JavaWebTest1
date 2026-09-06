@@ -1,4 +1,4 @@
-package pages;
+package pages.veb;
 
 import com.codeborne.selenide.SelenideElement;
 import core.base.BasePage;
@@ -12,6 +12,7 @@ public class AnonimRecoveryPage extends BasePage {
     private SelenideElement recoveryByPhoneButton = $("[name='recovery-phone-btn']");
     private SelenideElement recoveryByMailButton = $("[name='recovery-email-btn']");
     private SelenideElement goToSupportButton = $("[name='support-contact-btn']");
+    private SelenideElement clouseSupportChat = $("[name='support-dialog-close']");
 
 
     {
@@ -35,8 +36,9 @@ public class AnonimRecoveryPage extends BasePage {
         recoveryByMailButton.shouldBe(visible).click();
     }
 
-    @Step("Кликаем по кнопке связи с поддержкой")
+    @Step("Кликаем по кнопке связи с поддержкой и закрываем окно чата")
     public void clickToSupportButton() {
         goToSupportButton.shouldBe(visible).click();
+        clouseSupportChat.shouldBe(visible).click();
     }
 }
