@@ -79,7 +79,7 @@ public class LoginMobPage extends MobileBaseTest {
     }
 
     @Step ("Переход на страницу восстановления пароля после 3-х неудачных попыток")
-    public void recoveryPopupMobMob() {
+    public void recoveryPopupMob() {
         RecoveryPopup.shouldBe(visible).click();
     }
 
