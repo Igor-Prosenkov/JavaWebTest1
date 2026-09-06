@@ -1,10 +1,10 @@
-package tests;
+package tests.veb;
 
 import core.base.BaseTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import pages.AnonimRecoveryPage;
-import pages.LoginPage;
+import pages.veb.AnonimRecoveryPage;
+import pages.veb.LoginPage;
 
 import static com.codeborne.selenide.Selenide.open;
 
